@@ -30,7 +30,7 @@ export class FriendsService {
    * @param options - The options for the paginated query
    */
   async listFriendRequests(userId: string, options: ListRequestsPaginatedDto): Promise<PaginatedResult<FriendRequestsInterface>> {
-    const friendRequestWhereClause: Partial<FriendRequestsInterface> = {};
+    const friendRequestWhereClause: Record<string, string | number> = {};
 
     if (options?.status) {
       friendRequestWhereClause['status'] = options?.status;

@@ -1,5 +1,5 @@
-import { FriendInterface } from '../modules/database/interfaces/friend.interface';
 import { UserDTO } from './user.dto';
+import { FriendInterface } from '../modules/database/interfaces/friend.interface';
 
 export class FriendDTO {
   id: string

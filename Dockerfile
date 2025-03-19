@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a base image
-FROM node:18
+FROM node:20
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 
 # Install dependencies using Yarn
-RUN yarn install --frozen-lockfile
+RUN yarn
 
 # Copy the entire project into the container
 COPY . .

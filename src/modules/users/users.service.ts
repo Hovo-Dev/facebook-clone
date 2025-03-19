@@ -22,7 +22,7 @@ export class UsersService {
   async searchUsers(
     usersSearchPaginatedDto: UsersSearchPaginatedDto
   ): Promise<PaginatedResult<UserInterface>> {
-    const usersWhereClause: Partial<UserInterface> = {};
+    const usersWhereClause: Record<string, string | number> = {};
 
     if (usersSearchPaginatedDto?.first_name) {
       usersWhereClause['first_name'] = `%${usersSearchPaginatedDto?.first_name}%`;

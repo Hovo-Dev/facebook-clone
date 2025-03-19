@@ -30,6 +30,7 @@
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/swagger": "^11.0.6",
     "argon2": "^0.41.1",
+    "db-migrate-pg": "^1.5.2",
     "dotenv": "^16.4.7",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",

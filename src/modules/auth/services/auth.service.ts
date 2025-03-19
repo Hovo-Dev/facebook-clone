@@ -53,9 +53,17 @@ export default class AuthService {
    * @param data
    */
   public async register(data: RegisterDto) {
+    // Hash user password
     const hashedPassword = await this.hashService.hash(data.password)
 
-    const user = await this.userRepository.insert({ email: data.email, password: hashedPassword, first_name: data.first_name, last_name: data.last_name });
+    // Insert user into database
+    const user = await this.userRepository.insert({
+      password: hashedPassword,
+      first_name: data.first_name,
+      last_name: data.last_name,
+      email: data.email,
+      age: data.age,
+    });
 
     // After all checks, users have to be fine.
     return this.createJwtTokenForUser(user);

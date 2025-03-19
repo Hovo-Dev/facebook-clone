@@ -17,6 +17,9 @@ export class RegisterDto {
   email: string;
 
   @ApiProperty()
+  age: number;
+
+  @ApiProperty()
   password: string;
 
   @ApiProperty()
@@ -57,6 +60,11 @@ export default class RegisterValidationPipe extends DefaultValidationPipe {
           v.trim(),
           v.minLength(3),
           v.maxLength(50),
+        ),
+        age: v.pipe(
+          v.number(),
+          v.minValue(18),
+          v.maxValue(80),
         ),
         email: v.pipeAsync(
           v.string(),

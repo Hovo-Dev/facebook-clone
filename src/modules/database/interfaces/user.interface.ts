@@ -6,6 +6,7 @@ export interface UserInterface {
   first_name: string;
   last_name: string;
   password: string;
+  age: number;
   currentToken: AuthTokenInterface | null;
   created_at: Date;
 }
